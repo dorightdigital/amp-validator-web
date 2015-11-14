@@ -1,0 +1,27 @@
+{{#if results}}
+  <h2>Results</h2>
+
+  {{#each results}}
+    <div class="results {{#if success}}success{{/if}}">
+      <h3><a href="{{url}}" target="_blank">{{url}}</a> - <em>{{#if success}}Passed{{else}}Failed{{/if}}</em></h3>
+      {{#if errors}}
+        <ul class="errors">
+          {{#each errors}}
+            <li><span>{{line}}:{{char}}</span> {{reason}}</li>
+          {{/each}}
+        </ul>
+      {{/if}}
+    </div>
+  {{/each}}
+{{/if}}
+
+<form action="/validate">
+  {{#if results}}
+    {{#each results}}
+      <input name="url" placeholder="AMP URL" value="{{url}}"/>
+    {{/each}}
+  {{/if}}
+
+  <input name="url" placeholder="AMP URL"/>
+  <button>Validate</button>
+</form>

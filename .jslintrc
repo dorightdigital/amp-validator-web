@@ -1,0 +1,7 @@
+{
+  "indent": 2,
+  "sloppy": true,
+  "predef": ["Promise"],
+  "nomen": true,
+  "unparam": true
+}

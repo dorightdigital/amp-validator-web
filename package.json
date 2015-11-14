@@ -1,0 +1,29 @@
+{
+  "name": "amp-validator-web ",
+  "version": "0.0.1",
+  "description": "A web app wrapper for amp validation",
+  "main": "index.js",
+  "scripts": {
+    "build": "gulp build",
+    "dev": "gulp",
+    "test": "jslint server.js"
+  },
+  "author": "Mat Carey <opensource@dorightdigital.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-jslint": "^0.2.2",
+    "gulp-nodemon": "^2.0.4",
+    "gulp-sass": "^2.0.4",
+    "jslint": "^0.9.5",
+    "normalize.css": "^3.0.3"
+  },
+  "dependencies": {
+    "amp-validator": "^0.1.1",
+    "express": "^4.12.4",
+    "express-handlebars": "^2.0.1",
+    "lodash": "^3.9.3",
+    "vimeo": "^1.1.4"
+  }
+}
