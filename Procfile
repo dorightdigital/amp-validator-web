@@ -1,1 +1,1 @@
-web: npm install --development && npm run build && npm prune --production && npm start
+web: npm install --development && npm run build && npm start
