@@ -17,6 +17,9 @@ app.get('/', function (req, res) {
 app.get('/validate', function (req, res) {
   var urls = [].concat(req.query.url);
   Promise.all(_.map(_.compact(urls), function (url) {
+    if (url.indexOf('http:') !== 0 && url.indexOf('https:') !== 0) {
+      url = 'http://' + url;
+    }
     console.log('validating', url);
     return validator.validate(url).then(function (results) {
       return _.extend({
