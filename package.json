@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "amp-validator": "^0.1.4",
+    "bluebird": "https://registry.npmjs.org/bluebird/-/bluebird-3.0.5.tgz",
     "express": "^4.12.4",
     "express-handlebars": "^2.0.1",
     "lodash": "^3.9.3",

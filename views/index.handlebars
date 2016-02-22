@@ -1,11 +1,14 @@
-
 {{#each results}}
   <div class="results {{#if success}}success{{/if}}">
     <h3><a href="{{url}}" target="_blank">{{url}}</a> - <em>{{#if success}}Passed{{else}}Failed{{/if}}</em></h3>
-    {{#if errors}}
+    {{#if errors.length}}
       <ul class="errors">
         {{#each errors}}
-          <li><span>{{line}}:{{char}}</span> {{reason}}</li>
+          <li>
+            {{#if line}}
+              <span>{{line}}:{{char}}</span>
+            {{/if}}
+            {{reason}}</li>
         {{/each}}
       </ul>
     {{/if}}

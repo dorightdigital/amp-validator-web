@@ -1,4 +1,5 @@
 var express = require('express');
+var Promise = require('bluebird');
 var _ = require('lodash');
 var app = express();
 var validator = require('amp-validator');
@@ -21,15 +22,34 @@ app.get('/validate', function (req, res) {
       url = 'http://' + url;
     }
     console.log('validating', url);
-    return validator.validate(url).then(function (results) {
+    return validator.validate(url).then(function (result) {
+      if (result.ampVersion.declared === 'none') {
+        result.errors = [
+          {
+            reason: 'This doesn\'t seem to be an AMP document'
+          }
+        ];
+      }
       return _.extend({
         url: url
-      }, results);
+      }, result);
+    }).catch(function (err) {
+      console.error(err);
+      return {
+        url: url,
+        errors: [{
+          reason: err
+        }]
+      };
     });
   })).then(function (results) {
-    console.log('rendering validation results', results.length);
+    console.log('rendering validation results');
+    console.log(results);
     res.render('index', {results: results});
-  });
+  }).catch(function (err) {
+    console.error(err);
+    res.redirect('/');
+  }).done();
 });
 
 app.listen(process.env.PORT || 7805);
