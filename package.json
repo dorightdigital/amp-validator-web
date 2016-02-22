@@ -1,6 +1,9 @@
 {
   "name": "amp-validator-web ",
   "version": "0.0.1",
+  "engines": {
+    "node": "5.6.0"
+  },
   "description": "A web app wrapper for amp validation",
   "main": "index.js",
   "scripts": {
