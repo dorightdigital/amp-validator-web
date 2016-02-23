@@ -34,15 +34,16 @@ body {
   margin: 10px;
 }
 
-body > header {
+body > main > header {
   margin: 3em 0;
   text-align: center;
 }
 
-body > footer {
+body > main > footer {
   margin-top: 3em;
   text-align: center;
-  a {
+  p {
+    text-align: center;
     display: block;
     margin: 0 auto;
   }
@@ -59,5 +60,36 @@ body > footer {
     em {
       font-weight: bold;
     }
+  }
+}
+
+.adsbygoogle.footer-mpu {
+  margin: 30px auto;
+  display: block;
+  height: 250px;
+  width: 300px;
+}
+
+.adsbygoogle.sideBanner {
+  display: inline-block;
+  width: 300px;
+  height: 600px;
+}
+
+body.with-sidebar > main {
+  display: inline-block;
+  p {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 800px) {
+  .adsbygoogle.sideBanner {
+    display: block;
+  }
+  body.with-sidebar > main {
+    display: block;
   }
 }
