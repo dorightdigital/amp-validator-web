@@ -1,6 +1,6 @@
 {
   "name": "amp-validator-web",
-  "version": "0.0.1",
+  "version": "1.0.5",
   "dependencies": {
     "abbrev": {
       "version": "1.0.7",
@@ -35,8 +35,8 @@
       "resolved": "https://registry.npmjs.org/amdefine/-/amdefine-1.0.0.tgz"
     },
     "amp-validator": {
-      "version": "0.1.4",
-      "from": "amp-validator@0.1.4"
+      "version": "0.1.5",
+      "from": "amp-validator@0.1.5"
     },
     "ansi": {
       "version": "0.3.0",
@@ -1524,15 +1524,20 @@
       "from": "htmlparser2@>=3.7.3 <4.0.0",
       "resolved": "https://registry.npmjs.org/htmlparser2/-/htmlparser2-3.9.0.tgz",
       "dependencies": {
+        "isarray": {
+          "version": "1.0.0",
+          "from": "isarray@>=1.0.0 <1.1.0",
+          "resolved": "https://registry.npmjs.org/isarray/-/isarray-1.0.0.tgz"
+        },
         "process-nextick-args": {
           "version": "1.0.6",
           "from": "process-nextick-args@>=1.0.6 <1.1.0",
           "resolved": "https://registry.npmjs.org/process-nextick-args/-/process-nextick-args-1.0.6.tgz"
         },
         "readable-stream": {
-          "version": "2.0.5",
+          "version": "2.0.6",
           "from": "readable-stream@>=2.0.2 <3.0.0",
-          "resolved": "https://registry.npmjs.org/readable-stream/-/readable-stream-2.0.5.tgz"
+          "resolved": "https://registry.npmjs.org/readable-stream/-/readable-stream-2.0.6.tgz"
         }
       }
     },
