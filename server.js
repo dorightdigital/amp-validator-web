@@ -23,7 +23,7 @@ app.get('/validate', function (req, res) {
     }
     console.log('validating', url);
     return validator.validate(url).then(function (result) {
-      if (result.ampVersion.declared === 'none') {
+      if (result.ampVersion.declared === 'none' && result.errors.length === 0) {
         result.errors = [
           {
             reason: 'This doesn\'t seem to be an AMP document'
@@ -44,7 +44,7 @@ app.get('/validate', function (req, res) {
     });
   })).then(function (results) {
     console.log('rendering validation results');
-    console.log(results);
+    console.log('results', JSON.stringify(results));
     res.render('index', {results: results});
   }).catch(function (err) {
     console.error(err);
